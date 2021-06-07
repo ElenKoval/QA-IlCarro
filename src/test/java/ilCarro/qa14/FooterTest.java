@@ -1,6 +1,7 @@
 package ilCarro.qa14;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -26,9 +27,9 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerTest() {
+        wd.manage().window().setSize(new Dimension(500, 500));
         jumpToFooter();
         click(By.cssSelector("[href=\'/\']"));
-        clickedElement("//*[@class=\"footer__links\"]/ul/li[2]");
         System.out.println(clickedElement("//*[@class=\"footer__links\"]/ul/li[2]")
                 ? "link to top of page doesn't work"
                 : "link to top of page works");
